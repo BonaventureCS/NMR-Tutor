@@ -12,12 +12,10 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/item_linear_layout"
@@ -39,15 +37,20 @@
 
     </LinearLayout>
 
-    <com.example.android.expandingcells.ExpandingLayout
+    <edu.sbu.cs.android.NMR.expandingcells.ExpandingLayout
         
             android:id="@+id/expanding_layout"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:visibility="gone">
-       <RelativeLayout
-        	android:layout_width="match_parent"
-        	android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+           >
+
 		 <TextView
             android:id="@+id/tvSubTitle"
             android:layout_height="match_parent"
@@ -60,12 +63,14 @@
             android:paddingRight="20dp"
             android:paddingBottom="20dp"
            />
-        
+
+    
         <TextView
             android:id="@+id/text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="35dp"
+           android:layout_marginBottom="35dp"
+           	android:layout_marginTop="35dp"
             android:gravity="center_horizontal"
             android:paddingBottom="20dp"
             android:paddingLeft="20dp"
@@ -73,29 +78,31 @@
             android:textColor="#000"
             android:textSize="18sp"
             android:textStyle="bold" />
-
+		 <EditText
+            android:id="@+id/etAns"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:gravity="center_horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+             
+           
+           />
 <Button
         android:id="@+id/btSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view"
         android:layout_marginTop="20dp"
-        android:text="submit" />
+        android:text="submit"
+        android:focusable="false"/>
 
-    <TextView
-        android:id="@+id/etAns"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btSubmit"
-        android:layout_alignTop="@+id/btSubmit"
-        android:layout_toRightOf="@+id/btSubmit"
-        android:ems="10" 
-        android:text="This is test for editText">
 
-      
-    </TextView>
-      </RelativeLayout>
-    </com.example.android.expandingcells.ExpandingLayout>
+          </LinearLayout>
+    </edu.sbu.cs.android.NMR.expandingcells.ExpandingLayout>
 
 
   
