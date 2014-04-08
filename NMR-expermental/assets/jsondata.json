@@ -1,0 +1,51 @@
+[
+  {
+		"QuestionTitle": "Integration Ratio",	
+		"Question": "What is the integration ratio for peak A? ",
+		"Answer": "1",
+		"isCorrect": "false",
+		"Feedback": "The ratio is the number associated with the area under the peak"
+	},
+	{	
+		"QuestionTitle": "Integration",
+		"Question": "many hydrogens associated with peak A?",
+		"Answer": "1",
+		"isCorrect": "false",
+		"Feedback": "It should be an integer and the smallest number is often 1 or 2, but could be more if there is symmetry in the structure"
+	},
+	{	
+		"QuestionTitle": "Multiplicity",
+		"Question": "What is the multiplicity of the signal of peak A? singlet doublet triplet etc d\, of d d of t multiplet?",
+		"Answer": "doublet",
+		"isCorrect": "false",
+		"Feedback": "Count the number of peaks if symmetrical or if there is complex splitting.  Otherwise it is a multiplet."
+	},
+	{	
+		"QuestionTitle": "Neighboring H",
+		"Question": "How many neighboring hydrogens for peak A?",
+		"Answer": "1",
+		"isCorrect": "false",	
+		"Feedback":"Use the N plus one rule : number of peaks equals number of neighboring H plus 1"
+	},
+	{	
+		"QuestionTitle": "Coupling constant",
+		"Question": "What is the coupling constant on a 400MHz NMR for peak A (round to integer)?",
+		"Answer": "16",
+		"isCorrect": "false",
+		"Feedback":"To calculate : J (Hz) = (peak 1 Ð peak 2)*MHz (400)"
+	},
+	{	
+		"QuestionTitle": "Coupling constant",
+		"Question": "What does the coupling constant mean for peak A? (trans alkene cis alkene  geminal alkene ortho phenyl alkyl allylic geminal CH2)",
+		"Answer": "trans alkene",
+		"isCorrect": "false",	
+		"Feedback":"Trans alkene hydrogens give J values around 15 Hz"
+	},
+	{	
+		"QuestionTitle": "Chemical shift",
+		"Question": "What type of group is associated with peak A (CH CH2 CH3 CH2X CH3X CHX alkyne alkene phenyl aldehyde carboxylic acid exchangeable)?",
+		"Answer": "alkene ",
+		"isCorrect": "false",
+		"Feedback" :"Chemical shifts between 5-8 ppm can be alkenes or aromatics.  The coupling constant confirms this as an alkenyl peak with one trans neighbor."
+	}
+]
