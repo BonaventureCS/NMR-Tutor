@@ -1,6 +1,7 @@
 package edu.sbu.cs.android.NMR.core;
 
 
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -12,6 +13,7 @@ import org.json.JSONObject;
 
 import edu.sbu.cs.android.R;
 import android.content.Context;
+import android.content.Intent;
 
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
@@ -63,14 +65,22 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener{
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-        FragmentManager fm = getActivity().getSupportFragmentManager();
-        answerDialog = new AnswerDialog();
-        if(!qlist.isEmpty()){
-        	answerDialog.setQuestion(questions.get(arg2));
-        }
+        //FragmentManager fm = getActivity().getSupportFragmentManager();
+        //answerDialog = new AnswerDialog();
+       if(!qlist.isEmpty()){
+     	 Intent i = new Intent(getActivity(), AnswerDialog.class);
+     	i.putExtra("title", questions.get(arg2).getqTitle());
+     	i.putExtra("body", questions.get(arg2).getqData());
+     	i.putExtra("ans", questions.get(arg2).getqAns());
+     	i.putExtra("isCorrect", questions.get(arg2).getValid());
+     	i.putExtra("feedback", questions.get(arg2).getFeedback());
+		
+     	 startActivity(i);
+       }
+      
+        //answerDialog.show(fm, "fragment_edit_name");
         
-        answerDialog.show(fm, "fragment_edit_name");
-        Toast.makeText(getActivity(), "jsonarraylenght "+f+" list length"+qlist.size()+"question lenght"+questions.size(),Toast.LENGTH_LONG).show();
+       // Toast.makeText(getActivity(), "jsonarraylenght "+f+" list length"+qlist.size()+"question lenght"+questions.size(),Toast.LENGTH_LONG).show();
 	}
 
 	private class QuestionTask extends AsyncTask<Void, Void,Void>{
@@ -96,14 +106,12 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener{
 			        	f=i;
 			          JSONObject json_data = ja.getJSONObject(i);
 			          qTitle=json_data.getString("QuestionTitle");
-			         
 			          qData=json_data.getString("Question");
 			          qAns=json_data.getString("Answer");
 			          isCorrect=json_data.getString("isCorrect");
 			          feedback=json_data.getString("Feedback");
 			          questions.add(new Question(qTitle,qData,qAns,isCorrect,feedback));
 			          qlist.add(qTitle); 
-			         // f++;
 			        }
 
 			}catch (JSONException e) {

@@ -44,15 +44,15 @@ public final class R {
         public static final int triplebond=0x7f020011;
     }
     public static final class id {
-        public static final int action_IR=0x7f090021;
-        public static final int action_Lock=0x7f09001f;
-        public static final int action_NMR=0x7f090020;
-        public static final int btAnsSubmit=0x7f09001d;
+        public static final int action_IR=0x7f090022;
+        public static final int action_Lock=0x7f090020;
+        public static final int action_NMR=0x7f090021;
+        public static final int btAnsSubmit=0x7f09001e;
         public static final int btSubmit=0x7f09001a;
         public static final int drawing=0x7f090002;
         public static final int editText1=0x7f090001;
         public static final int etAns=0x7f090019;
-        public static final int etAnswer=0x7f09001c;
+        public static final int etAnswer=0x7f09001d;
         public static final int expanding_layout=0x7f090016;
         public static final int hsvImgConponents=0x7f090003;
         public static final int imgB1=0x7f09000d;
@@ -75,7 +75,8 @@ public final class R {
         public static final int pager=0x7f090000;
         public static final int text_view=0x7f090018;
         public static final int title_view=0x7f090015;
-        public static final int tvQTitle=0x7f09001e;
+        public static final int tvFeedback=0x7f09001c;
+        public static final int tvQTitle=0x7f09001f;
         public static final int tvQuestion=0x7f09001b;
         public static final int tvSubTitle=0x7f090017;
     }
@@ -127,5 +128,8 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
+        /**  All customizations that are NOT specific to a particular API-level can go here. 
+         */
+        public static final int questionD=0x7f070002;
     }
 }

@@ -29,7 +29,7 @@ import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
 	ActionBar.TabListener{
-	
+
 	private NonSwipeableViewPager viewPager;
 	//DrawingView dv=new DrawingView(this,);
 	private TabsPagerAdapter mAdapter;
@@ -46,6 +46,7 @@ public class MainActivity extends FragmentActivity implements
 		viewPager = (NonSwipeableViewPager) findViewById(R.id.pager);
 		
 		actionBar = getActionBar();
+		actionBar.setDisplayShowTitleEnabled(false);
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 
 		viewPager.setAdapter(mAdapter);

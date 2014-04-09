@@ -28,7 +28,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AnswerDialog extends DialogFragment implements OnClickListener {
+public class CopyOfAnswerDialog extends DialogFragment implements OnClickListener {
 EditText mEditText;
 String qData="", ansData ,dTitle;
 String jsondata, qDatas,qAns, qTitle;
@@ -38,7 +38,7 @@ View view;
 Question q;
 
 
-public AnswerDialog() {
+public CopyOfAnswerDialog() {
     // Empty constructor required for DialogFragment
 }
  @Override
