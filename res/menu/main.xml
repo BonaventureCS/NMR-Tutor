@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	  <item android:id="@+id/action_Lock"
+          android:title="Lock" 
+          android:showAsAction="always"/>
+      <item android:id="@+id/action_NMR"
+          android:title="NMR"
+          android:showAsAction="always"/>
+    <item android:id="@+id/action_IR"
+          android:title="IR" 
+          android:showAsAction="always"/>
+    
+    
+
+</menu>
