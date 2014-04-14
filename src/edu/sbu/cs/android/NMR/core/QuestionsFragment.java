@@ -77,10 +77,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener{
 		
      	 startActivity(i);
        }
-      
-        //answerDialog.show(fm, "fragment_edit_name");
-        
-       // Toast.makeText(getActivity(), "jsonarraylenght "+f+" list length"+qlist.size()+"question lenght"+questions.size(),Toast.LENGTH_LONG).show();
 	}
 
 	private class QuestionTask extends AsyncTask<Void, Void,Void>{
@@ -93,7 +89,7 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener{
 		@Override
 		protected Void doInBackground(Void... params) {
 			try {
-				jsondata= jsonToStringFromAssetFolder("jsondata.json", getActivity());
+				jsondata= jsonToStringFromAssetFolder("question.json", getActivity());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

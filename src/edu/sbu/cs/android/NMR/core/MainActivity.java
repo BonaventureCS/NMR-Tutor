@@ -1,29 +1,16 @@
 package edu.sbu.cs.android.NMR.core;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import edu.sbu.cs.android.NMR.adapter.TabsPagerAdapter;
-import edu.sbu.cs.android.drawing.DrawingView;
 import edu.sbu.cs.android.R;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -35,7 +22,7 @@ public class MainActivity extends FragmentActivity implements
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
-	private String[] tabs = { "Home", "Questions", "Draw" };
+	private String[] tabs = { "Spectra", "Questions", "SolveIt" };
 	private boolean lock=false;
 
 	@Override
@@ -86,7 +73,7 @@ public class MainActivity extends FragmentActivity implements
 	    switch (item.getItemId()) {
 	    case R.id.action_NMR:
 
-	    	HomeFragment.img.setImageResource(R.drawable.blacknmr);
+	    	HomeFragment.img.setImageResource(R.drawable.nmrq1blcklable);
 	       return true;
 	    case R.id.action_IR:
 	    	HomeFragment.img.setImageResource(R.drawable.nmrlabels);
