@@ -5,12 +5,18 @@
     android:orientation="vertical"
     android:background="#949494" >
     
-    <com.example.touch.TouchImageView
+   <!--  <com.example.touch.TouchImageView
         android:id="@+id/imgNMR"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20sp"
         android:scaleType="fitXY"
         android:src="@drawable/nmrq1blcklable" />
-
+ -->
+   <WebView
+        android:id="@+id/imgView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>

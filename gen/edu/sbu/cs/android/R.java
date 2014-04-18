@@ -45,16 +45,13 @@ public final class R {
         public static final int triplebond=0x7f020012;
     }
     public static final class id {
-        public static final int action_IR=0x7f09001f;
-        public static final int action_Lock=0x7f09001d;
-        public static final int action_NMR=0x7f09001e;
-        public static final int btAnsSubmit=0x7f09001b;
-        public static final int btSubmit=0x7f090017;
+        public static final int action_IR=0x7f090019;
+        public static final int action_Lock=0x7f090017;
+        public static final int action_NMR=0x7f090018;
+        public static final int btAnsSubmit=0x7f090015;
         public static final int drawing=0x7f090002;
         public static final int editText1=0x7f090001;
-        public static final int etAns=0x7f090016;
-        public static final int etAnswer=0x7f09001a;
-        public static final int expanding_layout=0x7f090013;
+        public static final int etAnswer=0x7f090014;
         public static final int hsvImgConponents=0x7f090003;
         public static final int imgB1=0x7f090009;
         public static final int imgB12=0x7f09000a;
@@ -62,21 +59,18 @@ public final class R {
         public static final int imgB14=0x7f09000c;
         public static final int imgB9=0x7f09000d;
         public static final int imgDrawSubmit=0x7f09000e;
-        public static final int imgNMR=0x7f09000f;
+        public static final int imgView=0x7f09000f;
         public static final int imgbCyclopentane=0x7f090008;
         public static final int imgbCycohexane=0x7f090007;
         public static final int imgbDoubleBond=0x7f090005;
         public static final int imgbSingeBond=0x7f090004;
         public static final int imgbTripleBond=0x7f090006;
-        public static final int item_linear_layout=0x7f090011;
         public static final int lvQuestions=0x7f090010;
         public static final int pager=0x7f090000;
-        public static final int text_view=0x7f090015;
-        public static final int title_view=0x7f090012;
-        public static final int tvFeedback=0x7f090019;
-        public static final int tvQTitle=0x7f09001c;
-        public static final int tvQuestion=0x7f090018;
-        public static final int tvSubTitle=0x7f090014;
+        public static final int tvFeedback=0x7f090013;
+        public static final int tvQTitle=0x7f090016;
+        public static final int tvQuestion=0x7f090012;
+        public static final int txtTitle=0x7f090011;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -84,7 +78,7 @@ public final class R {
         public static final int fragment_draw=0x7f030002;
         public static final int fragment_home=0x7f030003;
         public static final int fragment_questions=0x7f030004;
-        public static final int list_view_item=0x7f030005;
+        public static final int list_item_title_navigation=0x7f030005;
         public static final int question_dialog=0x7f030006;
         public static final int question_item=0x7f030007;
     }

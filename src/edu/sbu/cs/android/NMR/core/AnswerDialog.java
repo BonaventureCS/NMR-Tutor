@@ -43,9 +43,11 @@ protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.question_dialog);
 	qData = (TextView)findViewById(R.id.tvQuestion);
+	qData.setTextSize(32.0f);
 	 mEditText = (EditText)findViewById(R.id.etAnswer);
 	 mEditText.setInputType(InputType.TYPE_CLASS_TEXT);
 	feedback = (TextView)findViewById(R.id.tvFeedback);
+	mEditText.setTextSize(32.0f);
 	bt=(Button)findViewById(R.id.btAnsSubmit);
 	bt.setOnClickListener(this);
 	intent = getIntent();
