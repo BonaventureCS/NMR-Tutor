@@ -32,8 +32,9 @@ WebView  w;
        //img.setMaxZoom(8.0f);
 		w=(WebView)rootView.findViewById(R.id.imgView);
 		w.loadUrl("file:///android_asset/index.html");
-	  //w.getSettings().setBuiltInZoomControls(true);
-		w.getSettings().setDisplayZoomControls(true);
+		w.getSettings().setBuiltInZoomControls(true);
+		//w.getSettings().setDisplayZoomControls(true);
 		return rootView;
 	}
+	
 }

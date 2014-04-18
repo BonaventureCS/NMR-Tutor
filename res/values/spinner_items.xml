@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Peaks">
+        <item>Peak A</item>
+        <item>Peak B</item>
+        <item>Peak C</item>
+        <item>Peak D</item>
+        <item>Peak E</item>
+        <item>Peak F</item>
+    </string-array>
+    
+</resources>

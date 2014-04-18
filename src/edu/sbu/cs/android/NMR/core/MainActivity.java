@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends FragmentActivity implements
-	ActionBar.TabListener, OnNavigationListener{
+	ActionBar.TabListener{
 	Bundle bd;
 	private NonSwipeableViewPager viewPager;
 	//DrawingView dv=new DrawingView(this,);
@@ -29,11 +29,6 @@ public class MainActivity extends FragmentActivity implements
 	// Tab titles
 	private String[] tabs = { "Spectra", "Questions", "SolveIt" };
 	private boolean lock=false;
-
-	// Title navigation Spinner data
-	private ArrayList<SpinnerNavItem> navSpinner;
-	private TitleNavigationAdapter adapter;
-static PeakHolder ph;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,7 +38,6 @@ static PeakHolder ph;
 		actionBar = getActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
-		 ph= new PeakHolder();
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -51,26 +45,7 @@ static PeakHolder ph;
 		for (String tab_name : tabs) {
 			actionBar.addTab(actionBar.newTab().setText(tab_name)
 					.setTabListener(this));
-		ph.setPeak("A");
-		// actionbar spinner 
-			//actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-			navSpinner = new ArrayList<SpinnerNavItem>();
-			navSpinner.add(new SpinnerNavItem("Peak A"));
-			navSpinner.add(new SpinnerNavItem("Peak B"));
-			navSpinner.add(new SpinnerNavItem("Peak C"));
-			navSpinner.add(new SpinnerNavItem("Peak D" ));
-			navSpinner.add(new SpinnerNavItem("Peak E" ));
-			navSpinner.add(new SpinnerNavItem("Peak F" ));
-			// title drop down adapter
-			adapter = new TitleNavigationAdapter(getApplicationContext(),
-					navSpinner);
-			actionBar.setListNavigationCallbacks(adapter, this);
-			// assigning the spinner navigation
-
-
 		}
-		
-
 		/**
 		 * on swiping the viewpager make respective tab selected
 		 * */
@@ -135,12 +110,9 @@ static PeakHolder ph;
 	    return super.onCreateOptionsMenu(menu);
 	}
 	@Override
-	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-		Toast.makeText(this, " peak selected"+itemPosition,Toast.LENGTH_LONG).show();
-		ph.setPeak(navSpinner.get(itemPosition).getTitle());
-		
-		return false;
+	public void onBackPressed() {
+	    moveTaskToBack(true);
+		//wv.loadUrl("file:///android_asset/index.html");
 	}
-	
 	
 }
