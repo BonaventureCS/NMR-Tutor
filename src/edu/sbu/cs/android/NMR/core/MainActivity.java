@@ -1,15 +1,11 @@
 package edu.sbu.cs.android.NMR.core;
 
-import java.util.ArrayList;
 
 import edu.sbu.cs.android.NMR.adapter.TabsPagerAdapter;
-import edu.sbu.cs.android.NMR.adapter.TitleNavigationAdapter;
 import edu.sbu.cs.android.R;
 import android.app.ActionBar;
-import android.app.ActionBar.OnNavigationListener;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -40,6 +36,7 @@ public class MainActivity extends FragmentActivity implements
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
+		actionBar.setIcon(R.drawable.chalkboardicon_2);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		// Adding Tabs
 		for (String tab_name : tabs) {
@@ -73,10 +70,19 @@ public class MainActivity extends FragmentActivity implements
 	    switch (item.getItemId()) {
 	    case R.id.action_NMR:
 
-	    	//HomeFragment.img.setImageResource(R.drawable.nmrq1blcklable);
+	    	HomeFragment.w.loadUrl("file:///android_asset/nmr.html");
+	    	HomeFragment.w.getSettings().setBuiltInZoomControls(true);
+	    	HomeFragment.w.getSettings().setDisplayZoomControls(false);
 	       return true;
 	    case R.id.action_IR:
-	    	//HomeFragment.img.setImageResource(R.drawable.nmrlabels);
+	    	HomeFragment.w.loadUrl("file:///android_asset/ir.html");
+	    	HomeFragment.w.getSettings().setBuiltInZoomControls(true);
+	    	HomeFragment.w.getSettings().setDisplayZoomControls(false);
+	        return true;
+	    case R.id.action_CNMR:
+	    	HomeFragment.w.loadUrl("file:///android_asset/cnmr.html");
+	    	HomeFragment.w.getSettings().setBuiltInZoomControls(true);
+	    	HomeFragment.w.getSettings().setDisplayZoomControls(false);
 	        return true;
 	    case R.id.action_Lock:
 	    	lock=!lock;

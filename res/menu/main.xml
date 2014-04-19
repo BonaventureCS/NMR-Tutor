@@ -9,6 +9,9 @@
     <item android:id="@+id/action_IR"
           android:title="IR" 
           android:showAsAction="never"/>
+    <item android:id="@+id/action_CNMR"
+          android:title="CNMR" 
+          android:showAsAction="never"/>
     
     
 

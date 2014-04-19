@@ -47,8 +47,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 			View rootView = inflater.inflate(R.layout.fragment_questions, container, false);
 			lv = (ListView) rootView.findViewById(R.id.lvQuestions);
 			spinner = (Spinner) rootView.findViewById(R.id.filter_spinner);
-			//qlist=new ArrayList<String>();
-			//questions = new ArrayList<Question>();
 			// Create an ArrayAdapter using the string array and a default spinner layout
 			ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
 			        R.array.Peaks, android.R.layout.simple_spinner_item);
@@ -92,7 +90,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 		 		qlist=new ArrayList<String>();
 	        // An item was selected. You can retrieve the selected item using
 	        selectedPeak= parent.getItemAtPosition(pos).toString();
-	        //Toast.makeText(getActivity(),"Selected: "+selectedPeak ,Toast.LENGTH_SHORT).show();
 	        task=new QuestionTask(selectedPeak);
 	        task.execute();
 	         
@@ -111,8 +108,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 		}
 		@Override
 		protected Void doInBackground(Void... params) {
-			
-			//Toast.makeText(getActivity(),"Selected: "+selectedPeak ,Toast.LENGTH_SHORT).show();
 			try {
 				jsondata= jsonToStringFromAssetFolder("peak.json", getActivity());
 			} catch (IOException e) {
@@ -132,8 +127,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 			          isCorrect=json_data.getString("isCorrect");
 			          feedback=json_data.getString("Feedback");
 			          JSONpeak=json_data.getString("Peak");
-			          //System.out.println(JSONpeak);
-			          //Log.d("peak", peak);
 			          if(sentpeak.equals(JSONpeak)){
 			        	  questions.add(new Question(qTitle,qData,qAns,isCorrect,feedback));
 			        	  qlist.add(qTitle);
@@ -149,8 +142,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 		}
 		@Override
 		protected void onPostExecute(Void result) {
-			Toast.makeText(getActivity(),"peakFromJSon"+JSONpeak+" peakFromSpinner"+sentpeak ,Toast.LENGTH_SHORT).show();
-			//Toast.makeText(getActivity(),jsondata,Toast.LENGTH_SHORT).show();
 			if(qlist.isEmpty()){
 				qlist.add("no Questions");
 			}
@@ -163,7 +154,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 }
