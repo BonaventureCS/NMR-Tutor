@@ -4,6 +4,10 @@ package edu.sbu.cs.android.NMR.core;
 
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -36,10 +40,11 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 	  ArrayList<String> qlist;
 	  ArrayList<Question> questions;
 	 ArrayAdapter<String> arrayAdapter;
-	 String jsondata, isCorrect, qData,qAns, qTitle, feedback, selectedPeak;
-	 
+	 String jsondata, isCorrect, qData,qAns, qTitle, feedback, selectedPeak,path;
+	 static Question temp;
 	 QuestionTask task;
 	 Spinner spinner;
+	 File file;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -51,6 +56,16 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 			ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
 			        R.array.Peaks, android.R.layout.simple_spinner_item);
 			// Specify the layout to use when the list of choices appears
+			path = getActivity().getFilesDir().getAbsolutePath();
+			file = new File(path + "/question.txt");
+			if (!file.exists()) {
+				writeToString(file,loadJSONFromAsset());
+				Toast.makeText(getActivity(), readFromFile(),Toast.LENGTH_SHORT).show();
+			}else{
+
+				Toast.makeText(getActivity(), "does  exist",Toast.LENGTH_SHORT).show();
+			}
+
 			adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			// Apply the adapter to the spinner
 			spinner.setAdapter(adapter);
@@ -61,26 +76,27 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 	         
 		return rootView;
 	}
-	public static String jsonToStringFromAssetFolder(String fileName,Context context) throws IOException {
-        AssetManager manager = context.getAssets();
-        InputStream file = manager.open(fileName);
-
-        byte[] data = new byte[file.available()];
-        file.read(data);
-        file.close();
-        return new String(data);
-    }
+//	public static String jsonToStringFromAssetFolder(String fileName,Context context) throws IOException {
+//      //  AssetManager manager = context.getAssets();
+//     // InputStream file = manager.open(fileName);
+//		InputStream file= context.getResources().openRawResource(R.raw.peak);
+//        byte[] data = new byte[file.available()];
+//        file.read(data);
+//        file.close();
+//        return new String(data);
+//    }
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
        if(!qlist.isEmpty()){
+    	 temp=questions.get(arg2);
      	 Intent i = new Intent(getActivity(), AnswerDialog.class);
      	i.putExtra("title", questions.get(arg2).getqTitle());
      	i.putExtra("body", questions.get(arg2).getqData());
      	i.putExtra("ans", questions.get(arg2).getqAns());
      	i.putExtra("isCorrect", questions.get(arg2).getValid());
      	i.putExtra("feedback", questions.get(arg2).getFeedback());
-		Toast.makeText(getActivity(), "Peak: ",Toast.LENGTH_LONG).show();
+		//Toast.makeText(getActivity(), "Peak: ",Toast.LENGTH_LONG).show();
      	 startActivity(i);
        }
 	}
@@ -95,6 +111,79 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 	         
 	    }
 
+		public void writeToString(File file,String str){
+			FileOutputStream stream = null;
+			try {
+				stream = new FileOutputStream(file);
+				stream.write(str.getBytes());
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			finally {
+				try {
+					stream.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+
+		public String readFromFile(){
+			int length = (int) file.length();
+			byte[] bytes = new byte[length];
+			FileInputStream in =null;
+			try {
+				in= new FileInputStream(file);
+				in.read(bytes);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+					in.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			String contents = new String(bytes); 
+			return contents;
+
+		}
+
+		public String loadJSONFromAsset() {
+			String json = null;
+			try {
+
+				InputStream is = getActivity().getAssets().open("peak.json");
+				//InputStream is= getApplicationContext().getResources().openRawResource(R.raw.peak);
+				int size = is.available();
+
+				byte[] buffer = new byte[size];
+
+				is.read(buffer);
+
+				is.close();
+
+				json = new String(buffer, "UTF-8");
+
+
+			} catch (IOException ex) {
+				ex.printStackTrace();
+				return null;
+			}
+			return json;
+
+		}
+
 	private class QuestionTask extends AsyncTask<Void, Void,Void>{
 		String sentpeak,JSONpeak;
 	public QuestionTask(String p){
@@ -103,16 +192,17 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 	}
 		@Override
 		protected void onPreExecute() {
-			Toast.makeText(getActivity(),"preExcute: "+sentpeak ,Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getActivity(),"preExcute: "+sentpeak ,Toast.LENGTH_SHORT).show();
 			super.onPreExecute();
 		}
 		@Override
 		protected Void doInBackground(Void... params) {
-			try {
-				jsondata= jsonToStringFromAssetFolder("peak.json", getActivity());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				//jsondata=readFromFile(); //jsonToStringFromAssetFolder("peak.json", getActivity());
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+			jsondata=readFromFile();
 			JSONArray ja;
 				
 			try{

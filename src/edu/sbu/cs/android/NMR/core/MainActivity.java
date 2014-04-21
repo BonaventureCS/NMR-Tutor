@@ -86,7 +86,11 @@ public class MainActivity extends FragmentActivity implements
 	        return true;
 	    case R.id.action_Lock:
 	    	lock=!lock;
-	    	Toast.makeText(getApplicationContext(), "lock value="+lock,Toast.LENGTH_SHORT).show();
+	    	if(lock)
+	    	actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+	    	else
+	    		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+	    	
 	    	viewPager.setBlockSwipe(lock);
 	        return true;
 	    default:

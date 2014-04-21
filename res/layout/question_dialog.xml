@@ -10,27 +10,58 @@
         android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/long_lorem_ipsum" />
+        android:layout_margin="20dp"
+        android:text="Queston" />
+
+    <TextView
+        android:id="@+id/tvAns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="" />
 
     <TextView
         android:id="@+id/tvFeedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:text="feedback" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+        		
     <EditText
         android:id="@+id/etAnswer"
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="0.04"
-        android:imeOptions="actionDone" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Answer Here"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/btAnsSubmit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp"
         android:text="Submit" />
+
 
 </LinearLayout>
