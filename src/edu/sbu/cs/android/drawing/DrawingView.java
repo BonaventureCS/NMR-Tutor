@@ -72,16 +72,17 @@ public class DrawingView extends View {
 		 final int action = event.getAction();
 	        switch (action) {
 	        case MotionEvent.ACTION_DOWN: {
-	        	Xs=(int) event.getX();
-	        	Ys=(int) event.getY();
-	        	moveToSelectedPoint(Xs,Ys);
+//	        	Xs=(int) event.getX();
+//	        	Ys=(int) event.getY();
+//	        	moveToSelectedPoint(Xs,Ys);
 	        	//Toast.makeText(this.getContext(), "onDown Point"+Xs+": "+Ys+"added",Toast.LENGTH_SHORT).show();
 	            break;
 	        }
 
 	        case MotionEvent.ACTION_MOVE: {
+	        	Xs=(int) event.getX();
+	        	Ys=(int) event.getY();
 	        	
-	        	points.add(new Point(Xs,Ys));
 	        	
 	        	//invalidate();
 	        	//Toast.makeText(this.getContext(), "Action Move",Toast.LENGTH_SHORT).show();
@@ -89,6 +90,7 @@ public class DrawingView extends View {
 	            break;
 	        }
 	        case MotionEvent.ACTION_UP: {
+	        	points.add(new Point(Xs,Ys));
 	        	//Toast.makeText(this.getContext(), "Action Up",Toast.LENGTH_SHORT).show();
 	        	switch(getMode()){
 	        	case 0:
@@ -103,23 +105,23 @@ public class DrawingView extends View {
 	      }
 		 return true;
 	}
-	private void moveToSelectedPoint(int x, int y){
-		Path rgnPath=new Path();
-		rgnPath.addCircle(Xs, Ys, 60f, Direction.CW);
-		 Region rgn = new Region();
-//       rgn.setBounds();
-//		 Region clip = new Region();
-		 rgn.setPath(rgnPath,rgn);
-		 if(!points.isEmpty()){
-			 for(int i=0;i<points.size();i++){
-					if(rgn.contains(points.get(i).x, points.get(i).y))
-					{
-						Toast.makeText(this.getContext(), "contians the point",Toast.LENGTH_SHORT).show();
-						path.moveTo(points.get(i).x, points.get(i).y);
-					}
-				}
-		 }
-	}
+//	private void moveToSelectedPoint(int x, int y){
+//		Path rgnPath=new Path();
+//		rgnPath.addCircle(Xs, Ys, 60f, Direction.CW);
+//		 Region rgn = new Region();
+////       rgn.setBounds();
+////		 Region clip = new Region();
+//		 rgn.setPath(rgnPath,rgn);
+//		 if(!points.isEmpty()){
+//			 for(int i=0;i<points.size();i++){
+//					if(rgn.contains(points.get(i).x, points.get(i).y))
+//					{
+//						Toast.makeText(this.getContext(), "contians the point",Toast.LENGTH_SHORT).show();
+//						path.moveTo(points.get(i).x, points.get(i).y);
+//					}
+//				}
+//		 }
+//	}
 	private void singleBond(){
 		//path.addCircle(Xs, Ys, 40f, Direction.CW);
 		
@@ -131,9 +133,7 @@ public class DrawingView extends View {
 		path.moveTo(startPos.x,startPos.y);
 		if(!points.isEmpty()){
 			for(int i=0;i<points.size();i++){
-				//path.moveTo(points.get(i-1).x, points.get(i-1).y);
-				//path.lineTo(points.get(i-1).x, points.get(i-1).y);
-				//Toast.makeText(this.getContext(), "last point ->"+points.get(points.size()-1).x+": "+points.get(points.size()-1).y,Toast.LENGTH_SHORT).show();
+				
 			}
 		}
 		

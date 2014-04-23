@@ -51,10 +51,11 @@ public final class R {
         public static final int wrong=0x7f020015;
     }
     public static final class id {
-        public static final int action_CNMR=0x7f0b001d;
-        public static final int action_IR=0x7f0b001c;
-        public static final int action_Lock=0x7f0b001a;
-        public static final int action_NMR=0x7f0b001b;
+        public static final int action_CNMR=0x7f0b001e;
+        public static final int action_IR=0x7f0b001d;
+        public static final int action_Lock=0x7f0b001b;
+        public static final int action_NMR=0x7f0b001c;
+        public static final int action_Reset=0x7f0b001f;
         public static final int btAnsSubmit=0x7f0b0018;
         public static final int drawing=0x7f0b0002;
         public static final int editText1=0x7f0b0001;
@@ -80,6 +81,7 @@ public final class R {
         public static final int tvFeedback=0x7f0b0015;
         public static final int tvQTitle=0x7f0b0019;
         public static final int tvQuestion=0x7f0b0013;
+        public static final int tvSpinner=0x7f0b001a;
         public static final int txtTitle=0x7f0b0012;
     }
     public static final class layout {
@@ -91,6 +93,7 @@ public final class R {
         public static final int list_item_title_navigation=0x7f030005;
         public static final int question_dialog=0x7f030006;
         public static final int question_item=0x7f030007;
+        public static final int spinner_items=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;

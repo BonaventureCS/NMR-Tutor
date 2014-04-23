@@ -4,13 +4,16 @@
           android:icon="@drawable/ic_action_locked"
           android:showAsAction="always"/>
       <item android:id="@+id/action_NMR"
-          android:title="NMR"
+          android:title=" Show NMR"
           android:showAsAction="never"/>
     <item android:id="@+id/action_IR"
-          android:title="IR" 
+          android:title="Show IR" 
           android:showAsAction="never"/>
     <item android:id="@+id/action_CNMR"
-          android:title="CNMR" 
+          android:title=" Show CNMR" 
+          android:showAsAction="never"/>
+    <item android:id="@+id/action_Reset"
+          android:title=" Reset Questions" 
           android:showAsAction="never"/>
     
     

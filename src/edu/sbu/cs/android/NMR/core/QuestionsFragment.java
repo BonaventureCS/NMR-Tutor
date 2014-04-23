@@ -15,14 +15,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import edu.sbu.cs.android.R;
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -31,6 +35,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import android.widget.Toast;
 
@@ -41,8 +46,10 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 	  ArrayList<Question> questions;
 	 ArrayAdapter<String> arrayAdapter;
 	 String jsondata, isCorrect, qData,qAns, qTitle, feedback, selectedPeak,path;
+	 static String selectedPeak1;
 	 static Question temp;
 	 QuestionTask task;
+	 static QuestionTask task1;
 	 Spinner spinner;
 	 File file;
 	@Override
@@ -54,8 +61,10 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 			spinner = (Spinner) rootView.findViewById(R.id.filter_spinner);
 			// Create an ArrayAdapter using the string array and a default spinner layout
 			ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-			        R.array.Peaks, android.R.layout.simple_spinner_item);
+			        //R.array.Peaks, android.R.layout.simple_spinner_item);
+					 R.array.Peaks,R.layout.spinner_items);
 			// Specify the layout to use when the list of choices appears
+			adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			path = getActivity().getFilesDir().getAbsolutePath();
 			file = new File(path + "/question.txt");
 			if (!file.exists()) {
@@ -63,29 +72,21 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 				Toast.makeText(getActivity(), readFromFile(),Toast.LENGTH_SHORT).show();
 			}else{
 
-				Toast.makeText(getActivity(), "does  exist",Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getActivity(), "does  exist",Toast.LENGTH_SHORT).show();
 			}
 
 			adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			// Apply the adapter to the spinner
 			spinner.setAdapter(adapter);
 			spinner.setOnItemSelectedListener(this);
-			
-		    
-	         lv.setOnItemClickListener(this);
+		
+			lv.setOnItemClickListener(this);
+			//reSet();
+	        
 	         
 		return rootView;
 	}
-//	public static String jsonToStringFromAssetFolder(String fileName,Context context) throws IOException {
-//      //  AssetManager manager = context.getAssets();
-//     // InputStream file = manager.open(fileName);
-//		InputStream file= context.getResources().openRawResource(R.raw.peak);
-//        byte[] data = new byte[file.available()];
-//        file.read(data);
-//        file.close();
-//        return new String(data);
-//    }
-
+	
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
        if(!qlist.isEmpty()){
@@ -105,7 +106,9 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 		 		questions = new ArrayList<Question>();
 		 		qlist=new ArrayList<String>();
 	        // An item was selected. You can retrieve the selected item using
+		 		//((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
 	        selectedPeak= parent.getItemAtPosition(pos).toString();
+
 	        task=new QuestionTask(selectedPeak);
 	        task.execute();
 	         
@@ -164,7 +167,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 			try {
 
 				InputStream is = getActivity().getAssets().open("peak.json");
-				//InputStream is= getApplicationContext().getResources().openRawResource(R.raw.peak);
 				int size = is.available();
 
 				byte[] buffer = new byte[size];
@@ -183,7 +185,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 			return json;
 
 		}
-
 	private class QuestionTask extends AsyncTask<Void, Void,Void>{
 		String sentpeak,JSONpeak;
 	public QuestionTask(String p){
@@ -197,11 +198,6 @@ public class QuestionsFragment extends Fragment implements OnItemClickListener, 
 		}
 		@Override
 		protected Void doInBackground(Void... params) {
-//			try {
-//				//jsondata=readFromFile(); //jsonToStringFromAssetFolder("peak.json", getActivity());
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
 			jsondata=readFromFile();
 			JSONArray ja;
 				

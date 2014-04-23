@@ -236,7 +236,7 @@ public String loadJSONFromAsset() {
 	@Override
 	protected void onPostExecute(Void result) {
 		//Toast.makeText(getApplicationContext(),body+" : "+q,Toast.LENGTH_LONG).show();
-		Toast.makeText(getApplicationContext(),newJSONdata,Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(),newJSONdata,Toast.LENGTH_LONG).show();
 		writeToString(file,newJSONdata);
 		super.onPostExecute(result);
 	} 
