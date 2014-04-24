@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class DrawFragment extends Fragment implements OnClickListener {
-private ImageView singleBond,doubleBond,tripleBond;
+private ImageView singleBond,doubleBond,tripleBond,Cycohexane;
 private DrawingView drawView;
   
 
@@ -29,6 +29,7 @@ private DrawingView drawView;
 		singleBond.setOnClickListener(this);
 		doubleBond=(ImageView)rootView.findViewById(R.id.imgbDoubleBond);
 		doubleBond.setOnClickListener(this);
+		Cycohexane=(ImageView)rootView.findViewById(R.id.imgbCycohexane);
 		setRetainInstance(true);
 
 		return rootView;
@@ -44,6 +45,8 @@ private DrawingView drawView;
 			drawView.setMode(1);
 			drawView.unDo();
 			break;
+		case R.id.imgbCycohexane:
+			drawView.setMode(2);
 		
 		}
 	}
