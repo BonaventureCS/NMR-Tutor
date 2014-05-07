@@ -2,7 +2,7 @@ package edu.sbu.cs.android.NMR.core;
 
 
 
-import edu.sbu.cs.android.drawing.DrawingView;
+import edu.sbu.cs.android.NMR.drawing.DrawingView;
 import edu.sbu.cs.android.R;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;

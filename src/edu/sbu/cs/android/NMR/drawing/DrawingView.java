@@ -1,4 +1,4 @@
-package edu.sbu.cs.android.drawing;
+package edu.sbu.cs.android.NMR.drawing;
 
 import java.util.ArrayList;
 import java.util.List;
