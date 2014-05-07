@@ -63,26 +63,12 @@ public class DrawingView extends View {
 		
 		paint.setColor(Color.GREEN); 
 		paint.setTextSize(64);
-		
-		canvas.drawText("X: "+Xs+" Y: "+Ys, 600, 50, paint);
 
-		
 		canvas.drawPath(path, drawPaint);
 		canvas.drawCircle(startPos.x, startPos.y, 8, drawPaint);
-		canvas.drawText("start", 410f, 60f, paint);
-		
-//		/// finger area
-//		canvas.drawCircle(Xs, Ys, 8, paint);
 		if(isContained){
-			canvas.drawPath(p, paint);
+			//canvas.drawPath(p, paint);
 		}
-		
-
-		
-		
-
-		//canvas.draw
-
 		
 	}
 	@Override
@@ -105,14 +91,11 @@ public class DrawingView extends View {
 	    	    p.computeBounds(rectF, true);
 	    	    r = new Region();
 	    	    r.setPath(p, new Region((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom));
-	    	    //Toast.makeText(this.getContext(), "Region"+r.getBounds(),Toast.LENGTH_SHORT).show();
 	    	    for(int i=0; i<points.size();i++){
-	    	    	//Toast.makeText(this.getContext(), "Region"+r.getBounds(),Toast.LENGTH_SHORT).show();
 	    	    	if(r.contains(points.get(i).x,points.get(i).y))
 	    	    	{
 	    	    		
 	    	    		isContained=true;
-	    	    		Toast.makeText(this.getContext(), "iscontained"+isContained,Toast.LENGTH_SHORT).show();
 	    	    		path.moveTo(points.get(i).x, points.get(i).y);
 	    	    		invalidate();
 	    	        	
@@ -129,7 +112,6 @@ public class DrawingView extends View {
 	        	Xs=(int) event.getX();
 	        	Ys=(int) event.getY();
 	        	
-	        	//Toast.makeText(this.getContext(), "Action Move",Toast.LENGTH_SHORT).show();
 
 	            break;
 	        }
@@ -141,7 +123,7 @@ public class DrawingView extends View {
 
 	        	
 	        	
-	        	Toast.makeText(this.getContext(), "Get Mode"+getMode(),Toast.LENGTH_SHORT).show();
+	        	
 	        	switch(getMode()){
 	        	case 0:
 	        		singleBond();
@@ -162,7 +144,7 @@ public class DrawingView extends View {
     	invalidate();
 	}
 	private void Cycohexane(){
-		Toast.makeText(this.getContext(), "Cycohexane",Toast.LENGTH_SHORT).show();
+	
 		
 	}
 	public void unDo(){
