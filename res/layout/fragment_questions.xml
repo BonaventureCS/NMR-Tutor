@@ -5,15 +5,26 @@
     android:orientation="vertical" 
      android:background="#545454">
 
-    <ListView
-        android:id="@+id/lvQuestions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
-        android:background="#ffffff" >
+	<Spinner
+	    android:id="@+id/filter_spinner"
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentLeft="true"
+	    android:layout_marginBottom="20dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:background="#0D4F8B"
+	    android:textColor="#ffffff" />
 
-    </ListView>
+	<ListView
+	    android:id="@+id/lvQuestions"
+	    android:layout_width="match_parent"
+	    android:layout_height="200dp"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_margin="10dp"
+	    android:background="#ffffff" >
+	</ListView>
 
 </RelativeLayout>

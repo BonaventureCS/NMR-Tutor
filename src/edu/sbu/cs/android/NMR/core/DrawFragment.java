@@ -2,7 +2,7 @@ package edu.sbu.cs.android.NMR.core;
 
 
 
-import edu.sbu.cs.android.drawing.DrawingView;
+import edu.sbu.cs.android.NMR.drawing.DrawingView;
 import edu.sbu.cs.android.R;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class DrawFragment extends Fragment implements OnClickListener {
-private ImageView singleBond,doubleBound,tripleBond;
+private ImageView singleBond,doubleBond,tripleBond,Cycohexane;
 private DrawingView drawView;
   
 
@@ -27,6 +27,9 @@ private DrawingView drawView;
 		drawView = (DrawingView)rootView.findViewById(R.id.drawing);
 		singleBond=(ImageView)rootView.findViewById(R.id.imgbSingeBond);
 		singleBond.setOnClickListener(this);
+		doubleBond=(ImageView)rootView.findViewById(R.id.imgbDoubleBond);
+		doubleBond.setOnClickListener(this);
+		Cycohexane=(ImageView)rootView.findViewById(R.id.imgbCycohexane);
 		setRetainInstance(true);
 
 		return rootView;
@@ -36,12 +39,18 @@ private DrawingView drawView;
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.imgbSingeBond :
-			singleBond.setBackgroundColor(Color.BLUE);
-			drawView.drawBenezene();
-		break;
+			drawView.setMode(0);
+			break;
+		case R.id.imgbDoubleBond:
+			drawView.setMode(1);
+			drawView.unDo();
+			break;
+		case R.id.imgbCycohexane:
+			drawView.setMode(2);
+		
 		}
 	}
-
+	// have a mode swithcer the returns a number 
 	
 	
 	

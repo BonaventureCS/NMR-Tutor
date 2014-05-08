@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#545454">
-    <edu.sbu.cs.android.drawing.DrawingView
+    <edu.sbu.cs.android.NMR.drawing.DrawingView
         android:id="@+id/drawing"
     	android:layout_width="fill_parent"
     	android:layout_height="380dp"
@@ -46,13 +46,6 @@
         		android:layout_marginLeft="10dp"
         		android:layout_marginTop="10dp"
        		    android:src="@drawable/triplebond" />
-            <ImageButton
-        		android:id="@+id/imgbCarbonyl"
-        		android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:layout_marginLeft="10dp"
-        		android:layout_marginTop="10dp"
-       		    android:src="@drawable/carbonyl" />
            <ImageButton
         		android:id="@+id/imgbCycohexane"
         		android:layout_width="wrap_content"
@@ -67,27 +60,6 @@
         		android:layout_marginLeft="10dp"
         		android:layout_marginTop="10dp"
        		    android:src="@drawable/cyclopentane1" />
-           <ImageButton
-        		android:id="@+id/imgbMethine"
-        		android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:layout_marginLeft="10dp"
-        		android:layout_marginTop="10dp"
-       		    android:src="@drawable/methine" />
-           <ImageButton
-        		android:id="@+id/imgb"
-        		android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:layout_marginLeft="10dp"
-        		android:layout_marginTop="10dp"
-       		    android:src="@drawable/methyl" />
-           <ImageButton
-        		android:id="@+id/imgB11"
-        		android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:layout_marginLeft="10dp"
-        		android:layout_marginTop="10dp"
-       		    android:src="@drawable/methylene" />
             <ImageButton
         		android:id="@+id/imgB1"
         		android:layout_width="wrap_content"
@@ -123,12 +95,18 @@
         		android:layout_marginLeft="10dp"
         		android:layout_marginTop="10dp"
        		    android:src="@drawable/texteditor1" />
-            
+          <Button
+        		android:id="@+id/imgDrawSubmit"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_marginLeft="10dp"
+        		android:layout_marginTop="10dp"
+        		android:text="Submit" />
             
          
         </LinearLayout>
     </HorizontalScrollView>
 
-
+   
   
 </RelativeLayout>

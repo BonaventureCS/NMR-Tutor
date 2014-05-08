@@ -1,0 +1,235 @@
+[
+  {
+		"QuestionTitle": "Integration Ratio",	
+		"Question": "What is the integration ratio for peak A? ",
+		"Answer": "1",
+		"isCorrect": "false",
+		"Peak": "Peak A",
+		"Feedback": "The ratio is the number associated with the area under the peak"
+	},
+	{	
+		"QuestionTitle": "Integration",
+		"Question": "many hydrogens associated with peak A?",
+		"Answer": "1",
+		"isCorrect": "false",
+		"Peak": "Peak A",
+		"Feedback": "It should be an integer and the smallest number is often 1 or 2, but could be more if there is symmetry in the structure"
+	},
+	{	
+		"QuestionTitle": "Multiplicity",
+		"Question": "What is the multiplicity of the signal of peak A? singlet doublet triplet etc d\, of d d of t multiplet?",
+		"Answer": "doublet",
+		"isCorrect": "false",
+		"Peak": "Peak A",
+		"Feedback": "Count the number of peaks if symmetrical or if there is complex splitting.  Otherwise it is a multiplet."
+	},
+	{	
+		"QuestionTitle": "Neighboring H",
+		"Question": "How many neighboring hydrogens for peak A?",
+		"Answer": "1",
+		"isCorrect": "false",
+		"Peak": "Peak A",	
+		"Feedback":"Use the N plus one rule : number of peaks equals number of neighboring H plus 1"
+	},
+	{	
+		"QuestionTitle": "Coupling constant",
+		"Question": "What is the coupling constant on a 400MHz NMR for peak A (round to integer)?",
+		"Answer": "16",
+		"isCorrect": "false",
+		"Peak": "Peak A",
+		"Feedback":"To calculate : J (Hz) = (peak 1 – peak 2)*MHz (400)"
+	},
+	{	
+		"QuestionTitle": "Coupling constant",
+		"Question": "What does the coupling constant mean for peak A? (trans alkene cis alkene  geminal alkene ortho phenyl alkyl allylic geminal CH2)",
+		"Answer": "trans alkene",
+		"isCorrect": "false",	
+		"Peak": "Peak A",
+		"Feedback":"Trans alkene hydrogens give J values around 15 Hz"
+	},
+	{	
+		"QuestionTitle": "Chemical shift",
+		"Question": "What type of group is associated with peak A (CH CH2 CH3 CH2X CH3X CHX alkyne alkene phenyl aldehyde carboxylic acid exchangeable)?",
+		"Answer": "alkene ",
+		"isCorrect": "false",
+		"Peak": "Peak A",
+		"Feedback" :"Chemical shifts between 5-8 ppm can be alkenes or aromatics.  The coupling constant confirms this as an alkenyl peak with one trans neighbor."
+	},
+	{	
+		"QuestionTitle": "Integration Ratio",
+		"Question": " What is the integration ratio for peak B?",
+		"Answer": "2.09",
+		"isCorrect": "false",
+		"Peak": "Peak B",
+		"Feedback" :" The ratio is the number associated with the area under the  peak"
+	},
+	{	
+		"QuestionTitle": "Integration",
+		"Question": " How many hydrogens associated with peak B?",
+		"Answer": "2",
+		"isCorrect": "false",
+		"Peak": "Peak B",
+		"Feedback" :" It should be an integer and the smallest number is often 1 or 2\, but could be more if there is symmetry in the structure."
+	},
+	{	
+		"QuestionTitle": "Multiplicity",
+		"Question": " What is the multiplicity of the signal of peak B? ? (singlet\, doublet\, triplet\, etc.\, d of d\, d of t, multiplet? ",
+		"Answer": "multiplet",
+		"isCorrect": "false",
+		"Peak": "Peak B",
+		"Feedback" :" Count the number of peaks if symmetrical or if there is complex splitting.  Otherwise, it is a multiplet."
+	},
+	{	
+		"QuestionTitle": "Chemical shift",
+		"Question": " What type of group is associated with peak B (CH\, CH2\, CH3\, CH2X\, CH3X\, CHX\, alkyne\, alkene\, phenyl\, aldehyde\, carboxylic acid\, exchangeable)? ",
+		"Answer": " phenyl ",
+		"isCorrect": "false",
+		"Peak": "Peak B",
+		"Feedback" :" Chemical shifts between 5-8 ppm can be alkenes or aromatics. The integration and shift suggest a phenyl group."
+	},
+	{	
+		"QuestionTitle": " Integration Ratio",
+		"Question": " What is the integration ratio for peak C?",
+		"Answer": "3.04",
+		"isCorrect": "false",
+		"Peak": "Peak C",
+		"Feedback" :" The ratio is the number associated with the area under the peak"
+	},
+	{	
+		"QuestionTitle": " Integration",
+		"Question": " How many hydrogens associated with peak C?",
+		"Answer": "3",
+		"isCorrect": "false",
+		"Peak": "Peak C",
+		"Feedback" :" It should be an integer and the smallest number is often 1 or 2\, but could be more if there is symmetry in the structure"
+	},
+	{	
+		"QuestionTitle": "Multiplicity",
+		"Question": " What is the multiplicity of the signal of peak C? (singlet\, doublet\, triplet\, etc.\, d of d\, d of t\, multiplet)",
+		"Answer": " multiplet",
+		"isCorrect": "false",
+		"Peak": "Peak C",
+		"Feedback" :" Count the number of peaks if symmetrical or if there is complex splitting.  Otherwise, it is a multiplet."
+	},
+	{	
+		"QuestionTitle": " Chemical shift",
+		"Question": " What type of group is associated with peak C (CH\, CH2\, CH3\, CH2X\, CH3X\, CHX\, alkyne\, alkene\, phenyl\, aldehyde\, carboxylic acid\, exchangeable)?",
+		"Answer": "  phenyl ",
+		"isCorrect": "false",
+		"Peak": "Peak C",
+		"Feedback" :" Chemical shifts between 5-8 ppm can be alkenes or aromatics. The integration and shift suggest a phenyl"
+	},
+	{	
+		"QuestionTitle": " Integration Ratio",
+		"Question": "What is the integration ratio for peak D?",
+		"Answer": " 1.06 ",
+		"isCorrect": "false",
+		"Peak": "Peak D",
+		"Feedback" :"The ratio is the number associated with the area under the"
+	},
+	{	
+		"QuestionTitle": " Integration",
+		"Question": " How many hydrogens associated with peak D?",
+		"Answer": "1",
+		"isCorrect": "false",
+		"Peak": "Peak D",
+		"Feedback" :" It should be an integer and the smallest number is often 1 or 2\, but could be more if there is symmetry in the structure"
+	},
+	{	
+		"QuestionTitle": "Multiplicity",
+		"Question": " What is the multiplicity of the signal of peak D? (singlet\, doublet\, triplet\, etc.\, d of d\, d of t\, multiplet ",
+		"Answer": "",
+		"isCorrect": "false",
+		"Peak": "Peak D",
+		"Feedback" :" Count the number of peaks if symmetrical or if there is complex splitting. Otherwise, it is a multiplet."
+	},
+	{	
+		"QuestionTitle": " Neighboring H\’s",
+		"Question": "How many neighboring hydrogens for peak D?",
+		"Answer": "1",
+		"isCorrect": "false",
+		"Peak": "Peak D",
+		"Feedback" :" Use the N\+1 rule : # peaks = # neighboring H\’s \+ 1"
+	},
+	{	
+		"QuestionTitle": "Coupling constant",
+		"Question": "What is the coupling constant on a 400MHz NMR for peak D (round to integer)?",
+		"Answer": "16",
+		"isCorrect": "false",
+		"Peak": "Peak D",
+		"Feedback" :"To calculate : J (Hz) = (peak 1 – peak 2)*MHz (400)"
+	},
+	{	
+		"QuestionTitle": "Coupling constant",
+		"Question": " What does the coupling constant mean for peak D (trans alkene\, cis alkene\, geminal alkene\, ortho phenyl\, alkyl\, allylic,\, geminal CH2)?",
+		"Answer": "trans alkene",
+		"isCorrect": "false",
+		"Peak": "Peak D",
+		"Feedback" :"Trans alkene hydrogens give J values around 15 Hz"
+	},
+	{	
+		"QuestionTitle": "Chemical shift",
+		"Question": "What type of group is associated with peak D (CH\, CH2\, CH3\, CH2X\, CH3X\, CHX\, alkyne\, alkene\, phenyl\, aldehyde\, carboxylic acid\, exchangeable)?",
+		"Answer": "alkene ",
+		"isCorrect": "false",
+		"Peak": "Peak D",
+		"Feedback" :" Chemical shifts between 5-8 ppm can be alkenes or aromatics. The coupling constant confirms this as an alkenyl peak with one trans neighbor."
+	},
+	{	
+		"QuestionTitle": "Integration Ratio",
+		"Question": "What is the integration ratio for peak E?",
+		"Answer": " 2.09 ",
+		"isCorrect": "false",
+		"Peak": "Peak E",
+		"Feedback" :" The ratio is the number associated with the area under the peak"
+	},
+	{	
+		"QuestionTitle": "Integration",
+		"Question": " How many hydrogens associated with peak E?",
+		"Answer": "2",
+		"isCorrect": "false",
+		"Peak": "Peak E",
+		"Feedback" :" It should be an integer and the smallest number is often 1 or 2\, but could be more if there is symmetry in the structure"
+	},
+	{	
+		"QuestionTitle": " Multiplicity",
+		"Question": " What is the multiplicity of the signal of peak E? (singlet\, doublet\, triplet\, etc.\, d of d\, d of t\, multiplet)? ",
+		"Answer": "quartet",
+		"isCorrect": "false",
+		"Peak": "Peak E",
+		"Feedback" :" Count the number of peaks if symmetrical or if there is complex splitting.  Otherwise, it is a multiplet."
+	},
+	{	
+		"QuestionTitle": "Neighboring H’s",
+		"Question": "How many neighboring hydrogens for peak E?",
+		"Answer": "Use the N+1 rule : # peaks = # neighboring H’s + 1",
+		"isCorrect": "false",
+		"Peak": "Peak E",
+		"Feedback" :""
+	},
+	{	
+		"QuestionTitle": " Coupling constant",
+		"Question": " What is the coupling constant on a 400MHz NMR for peak E (round to integer)?",
+		"Answer": " 7",
+		"isCorrect": "false",
+		"Peak": "Peak E",
+		"Feedback" :"J (Hz) = (peak 1 – peak 2)\*MHz (400)"
+	},
+	{	
+		"QuestionTitle": " Coupling constant",
+		"Question": " What does the coupling constant mean for peak E (trans alkene\, cis  alkene\, geminal alkene,\ ortho phenyl\, alkyl\, allylic\, geminal CH2)?",
+		"Answer": "alkyl",
+		"isCorrect": "false",
+		"Peak": "Peak E",
+		"Feedback" :"alkyl H-H coupling give J values around 7 Hz"
+	},
+	{	
+		"QuestionTitle": "Chemical shift",
+		"Question": "What type of group is associated with peak E (CH\, CH2\, CH3\, CH2X\, CH3X\, CHX\, alkyne\, alkene\, phenyl\, aldehyde\, carboxylic acid\, exchangeable)?",
+		"Answer": " CH2X",
+		"isCorrect": "false",
+		"Peak": "Peak E",
+		"Feedback" :" Chemical shifts between 3-5 ppm are often alkyl groups bonded to electron withdrawing groups.The integration with the chemical shift indicates a CH2X group."
+	},
+	
+]

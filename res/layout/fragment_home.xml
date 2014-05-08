@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#949494" >
-    
-    <com.example.touch.TouchImageView
-        android:id="@+id/imgNMR"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="20sp"
-        android:scaleType="fitXY"
-        android:src="@drawable/nmrq1blcklable" />
 
+   <WebView
+        android:id="@+id/imgView"
+        android:background="#949494" 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
