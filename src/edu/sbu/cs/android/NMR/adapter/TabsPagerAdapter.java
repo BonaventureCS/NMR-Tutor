@@ -1,6 +1,7 @@
 package edu.sbu.cs.android.NMR.adapter;
 
 import edu.sbu.cs.android.NMR.core.DrawFragment;
+import edu.sbu.cs.android.NMR.core.SpectraFragment;
 import edu.sbu.cs.android.NMR.core.HomeFragment;
 import edu.sbu.cs.android.NMR.core.QuestionsFragment;
 import android.support.v4.app.Fragment;
@@ -21,11 +22,15 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 			// Home fragment activity
 			return new HomeFragment();
 		case 1:
+			// draw fragment activity
+			return new SpectraFragment();
+		case 2:
 			// Questions fragment activity
 			return new QuestionsFragment();
-		case 2:
+		case 3:
 			// draw fragment activity
 			return new DrawFragment();
+			
 		}
 
 		return null;
@@ -34,7 +39,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		// get item count - equal to number of tabs
-		return 3;
+		return 4;
 	}
 
 }
