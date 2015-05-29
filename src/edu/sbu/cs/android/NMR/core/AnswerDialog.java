@@ -43,6 +43,8 @@ EditText mEditText;
 String qAns, qBody=" h" ,correct , ansCorrect,path;
 TextView qData, feedback ,tvAns;
 Button bt;
+//Creates new button to clear selected answer.
+Button bt2;
 Intent intent;
 File file;
 ImageView img;
@@ -58,6 +60,8 @@ protected void onCreate(Bundle savedInstanceState) {
 	 mEditText.setInputType(InputType.TYPE_CLASS_TEXT);
 	feedback = (TextView)findViewById(R.id.tvFeedback);
 	bt=(Button)findViewById(R.id.btAnsSubmit);
+	//assigns value to clear button
+	bt2=(Button)findViewById(R.id.bt2AnsClear);
 	img=(ImageView)findViewById(R.id.imageView1);
 	bt.setOnClickListener(this);
 	intent = getIntent();
@@ -123,7 +127,17 @@ public void onClick(View v) {
 	}
 	
 }
-
+//assigns value to button
+public void clearAnswer(View v) 
+	{
+	QuestionsFragment.temp.setValid("false");
+	tvAns.setText(null);
+	feedback.setText(null);
+	ansCorrect="false";
+	AnswerTask at2 = new AnswerTask(ansCorrect,qBody);
+	img.setImageBitmap(null);
+	at2.execute();
+	}
 public void writeToString(File file,String str){
 	FileOutputStream stream = null;
 	try {
@@ -173,9 +187,9 @@ public String readFromFile(){
 }
 private class AnswerTask extends AsyncTask<Void, Void,Void>{
 
-String jsondata , vaild, q, body ,newJSONdata;
+String jsondata , valid, q, body ,newJSONdata;
 public  AnswerTask(String v, String b){
-	vaild=v;
+	valid=v;
 	body=b;
 }
 public String loadJSONFromAsset() {
@@ -222,7 +236,7 @@ public String loadJSONFromAsset() {
 		          if(q.equals(body)){
 		        	  
 		        	 // q=json_data.getString("Question");
-		        	  json_data.put("isCorrect",vaild); 
+		        	  json_data.put("isCorrect",valid); 
 		        	  newArray =new JSONArray(ja.toString());
 		        	  newJSONdata=newArray.toString();
 		          }
