@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
     android:background="#ffffff"
-    >
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/tvQuestion"
@@ -30,38 +29,51 @@
         android:text="feedback" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        >
-        		
-    <EditText
-        android:id="@+id/etAnswer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:hint="Answer Here"
-        android:ems="10" >
+        android:layout_marginTop="20dp" >
 
-        <requestFocus />
-    </EditText>
+        <EditText
+            android:id="@+id/etAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:hint="Answer Here" >
+
+            <requestFocus />
+        </EditText>
+
+       
+
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginTop="20dp" />
+    <!-- added functionality of clear answer button -->
 
+	 <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="20dp" />
+	 
     <Button
         android:id="@+id/btAnsSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="35dp"
+        android:layout_width="253dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
         android:text="Submit" />
 
+    <Button
+        android:id="@+id/bt2AnsClear"
+        android:layout_width="253dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="25dp"
+        android:onClick="clearAnswer"
+        android:text="Clear Answer" />
 
 </LinearLayout>
