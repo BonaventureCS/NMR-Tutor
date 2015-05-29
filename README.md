@@ -1,14 +1,60 @@
 NMR-Tutor
 =========
 
-Kyle Braham's indy study, Spring 2014. 
+Kyle Braham's indy study, Spring 2014.
+Alyssa Zlotnicki's independent study, Spring 2015. 
 
 App Description: 
 
 Discover the powerful tool of NMR by using H1 NMR, C13NMR and IR graphs to solve for the structure of an unknown molecule. 
-The app will provide NMR chemical shift tables, sketch pad and table to keep track of your findings when solving for the unknown structure.  After all data is collected, your sketch table and pad will be available for user to console once drawing the final structure. This allows the solving process to be paper free. 
+The app will provide NMR chemical shift tables, sketch pad and table to keep track of your findings when solving for the unknown structure.  After all data is collected, your sketch table and pad will be available for user to console once drawing the final structure. This allows the solving process to be paper free. Once a problem has been completed, it can be cleared an attempted again to gain full mastery of NMR analysis. 
 
 Help buttons will be available throughout the solving process for beginners but in no time those help buttons will be obsolete. 
+
+Status 5/14/15
+=============
+
+nmrSolveIt –status as of 5/14/15
+
+Overviews of fragments and new code added to app:
+
+Overview Home fragment (class: HomeFragment):
+
+•	The Home Fragment makes use of a GridView View that displays a list of problem sets to choose from in the form of images containing numbers corresponding to the problem sets they refer to.
+•	When the user touches an image, the Spectra, Questions, and SolveIt Fragments will be updated to correspond to information input in the system for the problem number that corresponds to the image’s position in the GridView. That is, a new image will be loaded into the Spectra Fragment, a new set of questions will be loaded for each peak into the Questions Fragment, and a new structure image will be loaded into the SolveIt Fragment.
+•	The update will require the use of an Asynchronous task in each of the fragments to enable the information contained in the fragments to be reloaded. As it currently stands, a variable has been created in the Main Activity that can have its value set and retrieved by the other fragments by calling the getter and setter methods provided in the Main Method. The fragments can communicate with each other, but none of this can be seen until the state of the fragments can be changed.
+•	An xml file for this class was also created to house the view.
+
+Overview AnswerDialog changes (class: AnswerDialog):
+
+•	A new button was created in this class, and a new method was created for it so its function could be implemented.
+•	When the method is called, the values of valid in the questions fragment and ansCorrect in the AnswerDialog class are changed to false, indicating the question hasn’t been answered correctly, the feedback and answer TextViews are set to null so as to hold not data, and the ImageView is set to null so it shows no picture.
+•	A new answerTask is also created, and on institution is given the new value of ansCorrect and the value of qbody, which holds the text of the question. When this answerTask is executed, it reloads the JSON data that the AnswerDialog uses so that the AnswerDialog now appears blank, as if a question had never been answered.
+•	The xml file “question_dialog” was also edited to incorporate the extra button created in the AnswerDialog class.
+
+Other Additions:
+
+Adding another Gridview Object
+1.	To add another image to the Gridview corresponding to the problem, add the desired to the drawable folder contained within the res folder. 
+2.	Add the appropriate reference to the file to the mThumbsId integer array found in the ImageAdapter class in the nmr core package, which should have the format “R.drawable.yourfilename”.
+
+Editing XML files for other screen sizes.
+1.	After the latest update, the graphical layout for xml files in the android development kit enables a developer to see what their view will look like on other screens. This function is located as the second item on the first menu toolbar, and has a phone icon with the name of an android device next to it.
+2.	Once this menu item is selected, a number of android screen sizes can be chosen between. Once one is chosen, the view changes to reflect what it will look like on the new screen. Future developers of this app should keep this function in mind when adding new things to the app.
+
+
+List of new things to be added to the app:
+
+•	Commented code
+o	While the readme currently contains some of the function of how the app works, the code does not contain any comments explaining what it does. Adding this and possibly a developer’s readme explaining the different parts of the app would be beneficial to future app developers.
+•	Add an input system for instructors to input their own problems that is user-friendly
+o	Currently, the only way to input new data for each problem is to edit the JSON file.
+o	Possibilities of creating a new user interface include using an interface associated with a SQL server, in which the data from the interface would be sent to and stored in the server, and the app would get the data from the server. This would provide a very clean interface but would not enable the app to be contained within simply the app files.
+o	Another option would to be to allow for a user-friendly txt file to be set up for instructors to input data for each of their problem sets. This txt file could then be read and input into the JSON file by a Java program.
+•	Extending it for more than one spectrum
+o	Currently, a Gridview View in one fragment of the app is being designed to handle information changes in multiple spectra of the app. 
+o	This Gridview Fragment currently can change the problem being worked on by using a setter method provided by the MainActivity to change a private variable in the MainActivity, and the other three Fragments get the value of this method using a getter method provided by the Main Activity. 
+o	However, this information will not be shown unless the app pages are reloaded.  This task would require an Asynchronous task that changed the state of the fragment.
 
 Status 5/7/14
 =============
